@@ -10,7 +10,7 @@
     "ext_hconsent": false,
     "ext_mintime": 120000,
     "ext_knowncookies": [
-        "todo"
+        "https://raw.githubusercontent.com/usenix-cookie-classifier-paper/USENIX-Cookies-Supplementary/main/src/ext_data/known_cookies.json"
     ],
     "ext_useinternal": true
 }

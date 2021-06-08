@@ -72,8 +72,8 @@ const updateSelectionOnChange = function(changes, area) {
     let changedItems = Object.keys(changes);
     if (area === "sync") {
         // update the consent checkboxes
-        if (changedItems.includes("cblk_userpolicy")) {
-            newPolicy = changes["cblk_userpolicy"].newValue;
+        if (changedItems.includes("ext_userpolicy")) {
+            newPolicy = changes["ext_userpolicy"].newValue;
             necessaryCheckbox.checked = newPolicy[0];
             functionalityCheckbox.checked = newPolicy[1];
             analyticsCheckbox.checked = newPolicy[2];
@@ -81,13 +81,13 @@ const updateSelectionOnChange = function(changes, area) {
         }
 
         // update the history consent toggle
-        if (changedItems.includes("cblk_hconsent")) {
-            histCheckbox.checked = changes["cblk_hconsent"].newValue;
+        if (changedItems.includes("ext_hconsent")) {
+            histCheckbox.checked = changes["ext_hconsent"].newValue;
         }
     } else if (area === "local") {
         // update the pause button
-        if (changedItems.includes("cblk_pause")){
-            pauseCheckbox.checked = changes["cblk_pause"].newValue;
+        if (changedItems.includes("ext_pause")){
+            pauseCheckbox.checked = changes["ext_pause"].newValue;
         }
     }
 }
@@ -100,9 +100,9 @@ chrome.storage.onChanged.addListener(updateSelectionOnChange);
  const addPrefClickListener = function (checkboxID, idx) {
     let cb = document.getElementById(checkboxID);
     cb.addEventListener("click", async (event) => {
-        policy = await getStorageValue(chrome.storage.sync, "cblk_userpolicy");
+        policy = await getStorageValue(chrome.storage.sync, "ext_userpolicy");
         policy[idx] = cb.checked;
-        setStorageValue(policy, chrome.storage.sync, "cblk_userpolicy");
+        setStorageValue(policy, chrome.storage.sync, "ext_userpolicy");
     });
 }
 
@@ -127,10 +127,10 @@ document.getElementById("set_policy").addEventListener("click", (ev) => {
 
 // pause checkbox
 pauseCheckbox.addEventListener("click", (ev) => {
-    setStorageValue(pauseCheckbox.checked, chrome.storage.local, "cblk_pause");
+    setStorageValue(pauseCheckbox.checked, chrome.storage.local, "ext_pause");
 });
 
 // consent checkbox
 histCheckbox.addEventListener("click", (ev) => {
-    setStorageValue(histCheckbox.checked, chrome.storage.sync, "cblk_hconsent");
+    setStorageValue(histCheckbox.checked, chrome.storage.sync, "ext_hconsent");
 });
