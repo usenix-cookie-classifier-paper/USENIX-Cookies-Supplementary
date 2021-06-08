@@ -1,0 +1,16 @@
+{
+    "ext_userpolicy": [true, false, false, false],
+    "ext_ulimit": 10,
+    "ext_pause": false,
+    "ext_exglobal": [],
+    "ext_exfunc": [],
+    "ext_exanal": [],
+    "ext_exadvert": [],
+    "ext_pscale": 3,
+    "ext_hconsent": false,
+    "ext_mintime": 120000,
+    "ext_knowncookies": [
+        "todo"
+    ],
+    "ext_useinternal": true
+}

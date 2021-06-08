@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="cconfig.css">
+</head>
+
+<body>
+<div class="header">
+    <img src="../icons/logo-128.png">
+    <div class="title">
+        <h1 id="cconfig-title"></h1>
+        <h2 id="cconfig-subtitle"></h2>
+    </div>
+</div>
+
+<div class="contents">
+    <div class="config-div">
+        <fieldset>
+            <legend id="cconfig-desc-title" class="cconfig-title-element"></legend>
+            <div class="cconfig-desc">
+                <p id="cconfig-desc-pg1"></p>
+                <p id="cconfig-desc-pg2"></p>
+            </div>
+        </fieldset>
+    </div>
+
+    <hr class="thick">
+
+    <div class="config-div">
+        <fieldset id="cconfig-fieldset">
+            <legend id="cconfig-list-title" class="cconfig-title-element"></legend>
+            <div id="cconfig-expand-desc" class="cconfig-desc"></div>
+            <button id="refresh-button" class="item-button"></button>
+            <button id="export-button" class="item-button"></button>
+            <ul id="domain-list" class="choice-list">
+                <li id="li-placeholder" hidden></li>
+            </ul>
+        </fieldset>
+    </div>
+    <hr class="thick">
+
+    <script type="text/javascript" src="../modules/globals.js"></script>
+    <script type="text/javascript" src="cconfig.js"></script>
+
+</div>
+
+
+</body></html>
